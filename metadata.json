@@ -1,0 +1,6 @@
+{
+  "name": "AetherStudio AI - مولد الصور والفيديوهات الاحترافي",
+  "description": "استوديو متطور لتوليد الصور والفيديوهات بالذكاء الاصطناعي مع تحكم فائق بالدقة (1K, 2K, 4K)، ومساعد محادثة ذكي واستجابة فائقة السرعة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

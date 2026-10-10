@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl" style="background-color: #09090b; color: #f4f4f5;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAEK7-Studio AI - مولد الصور والفيديوهات الاحترافي</title>
+    <meta name="description" content="استوديو متطور لتوليد الصور والفيديوهات بالذكاء الاصطناعي مع تحكم فائق بالدقة (1K, 2K, 4K)، ومساعد محادثة ذكي واستجابة فائقة السرعة." />
+    <meta property="og:title" content="MAEK7-Studio AI - مولد الصور والفيديوهات الاحترافي" />
+    <meta property="og:description" content="استوديو متطور لتوليد الصور والفيديوهات بالذكاء الاصطناعي مع تحكم فائق بالدقة (1K, 2K, 4K)، ومساعد محادثة ذكي واستجابة فائقة السرعة." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#09090b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      html, body {
+        background-color: #09090b !important;
+        color: #f4f4f5 !important;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-indigo-500 selection:text-white font-['Cairo',sans-serif]">
+    <div id="root">
+      <div id="boot-splash" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #09090b; color: #ffffff; font-family: 'Cairo', sans-serif; text-align: center; padding: 20px;">
+        <div style="width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);">
+          <span style="font-size: 28px;">✨</span>
+        </div>
+        <h1 style="font-size: 20px; font-weight: 800; margin: 0 0 8px 0; background: linear-gradient(to right, #ffffff, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">MAEK7-Studio AI</h1>
+        <p style="font-size: 13px; color: #a1a1aa; margin: 0 0 20px 0;">استوديو توليد الصور والفيديوهات بالذكاء الاصطناعي</p>
+        <div style="width: 32px; height: 32px; border: 3px solid rgba(99, 102, 241, 0.2); border-top-color: #818cf8; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+        <pre id="boot-error" dir="ltr" style="display:none; max-width: 640px; margin-top: 20px; padding: 12px; text-align: left; white-space: pre-wrap; word-break: break-word; font-size: 12px; color: #fca5a5; background: rgba(127,29,29,.25); border: 1px solid rgba(248,113,113,.35); border-radius: 12px;"></pre>
+      </div>
+    </div>
+    <script>
+      // Boot watchdog: if React has not replaced the splash after a while, show why.
+      (function () {
+        var errors = [];
+        function add(msg) { errors.push(String(msg)); show(); }
+        function show() {
+          var splash = document.getElementById('boot-splash');
+          var box = document.getElementById('boot-error');
+          if (!splash || !box) return; // React already took over
+          box.style.display = 'block';
+          box.textContent = errors.join('\n\n');
+        }
+        window.addEventListener('error', function (e) {
+          var t = e.target;
+          if (t && t !== window && (t.src || t.href)) add('Failed to load: ' + (t.src || t.href));
+          else add((e.message || 'Error') + (e.filename ? '\n  at ' + e.filename + ':' + e.lineno : ''));
+        }, true);
+        window.addEventListener('unhandledrejection', function (e) {
+          add('Unhandled rejection: ' + (e.reason && (e.reason.stack || e.reason.message) || e.reason));
+        });
+        setTimeout(function () {
+          if (!document.getElementById('boot-splash')) return;
+          if (!errors.length) errors.push('التطبيق لم يبدأ بعد 10 ثوانٍ ولم تُسجَّل أخطاء. افتح Console/Network في المتصفح وتحقق من تحميل /src/main.tsx أو ملفات /assets.\nApp did not start within 10s (no JS error captured). Check the Network tab for the main script.');
+          show();
+        }, 10000);
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
